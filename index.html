@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026 Ultra Premium Surprise</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+    <div class="stars-container"></div>
+    
+    <div id="app">
+        <section class="screen active" id="welcome">
+            <div class="premium-card">
+                <h1 class="glow-title">Happy 2026! 🎆</h1>
+                <p>Ek naye saal ki shuruat, kuch purani yaadon ke sath...</p>
+                <button class="gold-btn" onclick="startFireworks()">Open Magic ✨</button>
+            </div>
+        </section>
+
+        <section class="screen" id="video-reel">
+            <div class="premium-card">
+                <h2 class="section-title">A Special Moment 🎥</h2>
+                <div class="video-container">
+                    <video id="myReel" width="100%" controls>
+                        <source src="reel.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <button class="gold-btn" onclick="nextScreen('memories')">See Memories 📸</button>
+            </div>
+        </section>
+
+        <section class="screen" id="memories">
+            <div class="premium-card">
+                <h2 class="section-title">Your Best Moments 📸</h2>
+                <div class="polaroid-stack" id="stack">
+                    <script>
+                        for(let i=25; i>=1; i--) {
+                            document.write(`<div class="polaroid" onclick="popPhoto(this)">
+                                <img src="img${i}.jpg">
+                                <p>Moment #${i}</p>
+                            </div>`);
+                        }
+                    </script>
+                </div>
+                <p class="hint">Tap on photos to scatter them! ✨</p>
+                <button class="gold-btn" onclick="nextScreen('note')">Read This ❤️</button>
+            </div>
+        </section>
+
+        <section class="screen" id="note">
+            <div class="premium-card">
+                <h2 class="glow-title">A Special Note</h2>
+                <div class="note-box">
+                    <p>2025 mere liye bahut hi khaas raha, aur iski wajah sirf tum ho. Is saal mujhe tum jaisi sabse behtareen dost mili.</p>
+                    <p>Tumhari dosti ne mere har din ko special banaya hai. Thank you for being there! ❤️</p>
+                </div>
+                <button class="gold-btn" onclick="nextScreen('music')">Listen 🎵</button>
+            </div>
+        </section>
+
+        <section class="screen" id="music">
+            <div class="premium-card">
+                <h2 class="glow-title">For You</h2>
+                <div class="music-box">
+                    <audio id="bgMusic" controls>
+                        <source src="song.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+                <button class="gold-btn" onclick="celebrateFinal()">Final Blast! 🥳</button>
+            </div>
+        </section>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
